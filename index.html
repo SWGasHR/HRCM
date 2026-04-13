@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HRCM</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* --- BLUE NAV BAR --- */
+    .top-nav {
+      background-color: #252763;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 16px;
+      height: 56px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 20;
+    }
+
+    .nav-home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .nav-home:hover {
+      background-color: rgba(255,255,255,0.14);
+    }
+
+    .nav-home svg {
+      width: 26px;
+      height: 26px;
+      fill: white;
+      display: block;
+    }
+
+    .nav-image-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 42px;
+      padding: 4px 8px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .nav-image-link:hover {
+      background-color: rgba(255,255,255,0.14);
+    }
+
+    .nav-image {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-item,
+    .dropdown-toggle {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.2s ease;
+      height: 40px;
+      box-sizing: border-box;
+    }
+
+    .nav-item:hover,
+    .dropdown-toggle:hover {
+      background-color: rgba(255,255,255,0.14);
+    }
+
+    .dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 260px;
+      background: white;
+      color: #333;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+      padding: 10px 0;
+      z-index: 999;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 16px;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f3f4f6;
+    }
+
+    .dropdown-header {
+      padding: 10px 16px 6px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #8a8a8a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .dropdown-divider {
+      height: 1px;
+      background: #e9e9e9;
+      margin: 8px 0;
+    }
+
+    .caret {
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    .nav-spacer {
+      flex: 1;
+    }
+
+    .swgas-logo-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .swgas-logo-link:hover {
+      background-color: rgba(255,255,255,0.14);
+    }
+
+    .swgas-logo {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+
+    iframe {
+      width: 100%;
+      height: calc(100% - 56px);
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-nav">
+    <a class="nav-home" href="INSERT_HOME_LINK_HERE" title="Home">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3.2 3 10.4v10.4c0 .6.4 1 1 1h5.5c.6 0 1-.4 1-1v-5.2h3v5.2c0 .6.4 1 1 1H20c.6 0 1-.4 1-1V10.4l-9-7.2z"/>
+      </svg>
+    </a>
+
+    <a class="nav-image-link" href="Department.png" title="Secondary Link">
+      <img src="Department.png" alt="Secondary Navigation Image" class="nav-image">
+    </a>
+
+    <a class="nav-item" href="INSERT_ALL_DEPARTMENT_PROJECTS_VIEW_LINK_HERE">
+      All (Department Name Projects) View (View Only)
+    </a>
+
+    <a class="nav-item" href="INSERT_ALL_HR_PERSONAL_TASKS_LINK_HERE">
+      All HR Personal Tasks (View Only)
+    </a>
+
+    <div class="dropdown">
+      <div class="dropdown-toggle" tabindex="0">
+        (Department Name) Projects <span class="caret">▼</span>
+      </div>
+      <div class="dropdown-menu">
+        <a href="INSERT_DEPARTMENT_PROJECT_LINK_1_HERE">BAU</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <div class="dropdown-toggle" tabindex="0">
+        Navigation <span class="caret">▼</span>
+      </div>
+      <div class="dropdown-menu">
+        <div class="dropdown-header">HRLT</div>
+        <a href="INSERT_HRLT_LINK_1_HERE">Albert Taylor</a>
+        <a href="INSERT_HRLT_LINK_2_HERE">Gail Carmona</a>
+        <a href="INSERT_HRLT_LINK_3_HERE">Mike Bryant</a>
+        <a href="INSERT_HRLT_LINK_4_HERE">Courtney Moore</a>
+
+        <div class="dropdown-divider"></div>
+
+        <div class="dropdown-header">Departments</div>
+        <a href="INSERT_DEPARTMENT_LINK_1_HERE">Benefits</a>
+        <a href="INSERT_DEPARTMENT_LINK_2_HERE">Compensation</a>
+        <a href="INSERT_DEPARTMENT_LINK_3_HERE">DE&I</a>
+        <a href="INSERT_DEPARTMENT_LINK_4_HERE">ELO</a>
+        <a href="INSERT_DEPARTMENT_LINK_5_HERE">Employee Experience</a>
+        <a href="INSERT_DEPARTMENT_LINK_6_HERE">HRBP</a>
+        <a href="INSERT_DEPARTMENT_LINK_7_HERE">HRCM</a>
+        <a href="INSERT_DEPARTMENT_LINK_8_HERE">HRS</a>
+        <a href="INSERT_DEPARTMENT_LINK_9_HERE">HRSS</a>
+        <a href="INSERT_DEPARTMENT_LINK_10_HERE">Labor Relations</a>
+        <a href="INSERT_DEPARTMENT_LINK_11_HERE">Talent Acquisition</a>
+        <a href="INSERT_DEPARTMENT_LINK_12_HERE">Talent Development</a>
+
+        <div class="dropdown-divider"></div>
+
+        <div class="dropdown-header">KPIs</div>
+        <a href="INSERT_KPI_LINK_HERE">KPI Dashboard</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <div class="dropdown-toggle" tabindex="0">
+        Support <span class="caret">▼</span>
+      </div>
+      <div class="dropdown-menu">
+        <a href="INSERT_SUPPORT_EMBED_HTML_1_HERE" target="_blank" rel="noopener noreferrer">Support Link 1</a>
+        <a href="INSERT_SUPPORT_EMBED_HTML_2_HERE" target="_blank" rel="noopener noreferrer">Support Link 2</a>
+        <a href="INSERT_SUPPORT_LINK_3_HERE">Support Link 3</a>
+        <a href="INSERT_SUPPORT_LINK_4_HERE">Support Link 4</a>
+      </div>
+    </div>
+
+    <div class="nav-spacer"></div>
+
+    <a class="swgas-logo-link"
+       href="https://swgas.sharepoint.com/sites/communications"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Southwest Gas SharePoint">
+      <img src="SWgas.png" alt="Southwest Gas" class="swgas-logo">
+    </a>
+  </div>
+
+  <iframe src="https://app.smartsheet.com/b/publish?EQBCT=13f0d7daeeef42d4b67653e8ac8bc300" allowfullscreen></iframe>
+
+</body>
+</html>
